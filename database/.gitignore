@@ -1,1 +1,1 @@
-*.sqlite*
+# *.sqlite* # commented because we want to keep the database file in the repository
