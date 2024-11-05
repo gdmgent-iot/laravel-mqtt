@@ -1,6 +1,12 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
+// read host from .env
+import dotenv from 'dotenv';
+dotenv.config();
+
+const host = process.env.APP_HOST || '127.0.0.1';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -9,7 +15,7 @@ export default defineConfig({
         }),
     ],
     server: {
-        /*host: '192.168.0.66', */ // Uncomment this line to use a custom host
+        host: host,
         port: 3000,
     },
-});
+}); 
